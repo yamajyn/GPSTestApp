@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     var destinationLatitude: Double = 35.66201
     //行き先の経度
     var destinationLongitude: Double = 139.366313
+    
     //行き先の位置情報
     var destinations = ["日野キャン", "南大沢キャン", "荒川キャン", "新宿サテライト"]
     var destination: CLLocation!
@@ -30,6 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
 
+    @IBOutlet weak var degreeLabel: UILabel!
 
     
     override func viewDidLoad() {
@@ -47,11 +49,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         locationManager.requestAlwaysAuthorization()
         // 位置情報の精度を指定．任意，
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //option
         // 位置情報取得間隔を指定．指定した値（メートル）移動したら位置情報を更新する．任意．
-        // lm.distanceFilter = 1000
+        // locationManager.distanceFilter = 1000
+        //すべての動きを通知する
+        locationManager.distanceFilter = kCLDistanceFilterNone
         
         // GPSの使用を開始する
         locationManager.startUpdatingLocation()
+        //コンパスの使用を開始する
+        locationManager.startUpdatingHeading()
         
         destination = CLLocation(latitude: destinationLatitude, longitude: destinationLongitude)
     }
@@ -72,11 +79,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         // 取得した緯度・経度をLogに表示
         //NSLog("latiitude: \(latitude) , longitude: \(longitude)")
         let distance = destination.distanceFromLocation(currentLocation)
-        print(distance)
+        //print(distance)
         
         distanceLabel.text = String(format: "%0.2f", Float(distance)) + "m"
         // GPSの使用を停止する．停止しない限りGPSは実行され，指定間隔で更新され続ける．
         locationManager.stopUpdatingLocation()
+    }
+    
+    /* コンパス情報取得成功時に実行される関数 */
+    func locationManager(manager:CLLocationManager, didUpdateHeading newHeading:CLHeading) {
+        let accuracy = newHeading.headingAccuracy
+        print("accuracy: " + String(accuracy))
+        if accuracy < 0 {
+            return
+        }
+        let trueHeading = newHeading.trueHeading
+        let magneticHeading = newHeading.magneticHeading
+        
+        print("true    : " + String(trueHeading))
+        print("magnetic: " + String(magneticHeading))
+        let direction = magneticHeading - accuracy
+        print("direction" + String(direction))
+        degreeLabel.text = String(format: "%0.1f", Float(magneticHeading)) + "°"
+        
     }
     
     /* 位置情報取得失敗時に実行される関数 */

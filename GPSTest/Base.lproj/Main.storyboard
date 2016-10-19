@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,35 +16,28 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnp-Zg-IV1">
-                                <rect key="frame" x="20" y="310" width="560" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="xac-ia-NAM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW4-fm-1nX">
-                                <rect key="frame" x="0.0" y="57" width="600" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Unm-Wp-gp6"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AmW-Ck-ofW"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日野キャンまで" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-gs-Pzm">
-                                <rect key="frame" x="0.0" y="316" width="600" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="RNL-zi-dvo"/>
+                                    <constraint firstAttribute="height" constant="49" id="hFt-Dj-zu7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfh-L3-E0r">
-                                <rect key="frame" x="227" y="488" width="147" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="cI0-nk-OaY"/>
+                                    <constraint firstAttribute="height" constant="64" id="TPQ-oJ-Nmw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="31"/>
                                 <state key="normal" title="更新"/>
@@ -50,25 +45,42 @@
                                     <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFZ-ng-JSL"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NW4-fm-1nX">
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Unm-Wp-gp6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AmW-Ck-ofW"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360.0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUj-Ds-5OZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="qFC-7z-gb1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NW4-fm-1nX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-327" id="2DN-Pz-FI4"/>
-                            <constraint firstItem="Mnp-Zg-IV1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="290" id="2hF-im-MQv"/>
-                            <constraint firstItem="NW4-fm-1nX" firstAttribute="trailing" secondItem="Mnp-Zg-IV1" secondAttribute="trailing" constant="20" id="7DN-AI-8IV"/>
-                            <constraint firstItem="Dfh-L3-E0r" firstAttribute="centerX" secondItem="2xM-gs-Pzm" secondAttribute="centerX" id="7Pv-CA-fFp"/>
-                            <constraint firstItem="2xM-gs-Pzm" firstAttribute="centerX" secondItem="Mnp-Zg-IV1" secondAttribute="centerX" id="A67-13-mw7"/>
-                            <constraint firstAttribute="trailing" secondItem="Mnp-Zg-IV1" secondAttribute="trailing" constant="20" id="Bp2-KY-EQN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mnp-Zg-IV1" secondAttribute="bottom" constant="120" id="Irh-cC-ZZQ"/>
-                            <constraint firstItem="Dfh-L3-E0r" firstAttribute="top" secondItem="Mnp-Zg-IV1" secondAttribute="bottom" constant="8" symbolic="YES" id="K5R-Jv-uw6"/>
-                            <constraint firstItem="Mnp-Zg-IV1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="SWK-Ox-k4J"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2xM-gs-Pzm" secondAttribute="bottom" constant="235" id="YkR-Q0-fET"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dfh-L3-E0r" secondAttribute="bottom" constant="48" id="ghB-Gv-07T"/>
-                            <constraint firstItem="NW4-fm-1nX" firstAttribute="leading" secondItem="Mnp-Zg-IV1" secondAttribute="leading" constant="-20" id="ucY-S5-VQ2"/>
-                            <constraint firstItem="2xM-gs-Pzm" firstAttribute="top" secondItem="NW4-fm-1nX" secondAttribute="bottom" constant="43" id="v75-x1-abX"/>
+                            <constraint firstAttribute="trailing" secondItem="NW4-fm-1nX" secondAttribute="trailing" id="AwZ-Y4-S3F"/>
+                            <constraint firstItem="aUj-Ds-5OZ" firstAttribute="top" secondItem="NW4-fm-1nX" secondAttribute="bottom" constant="30" id="GjT-ml-VkY"/>
+                            <constraint firstItem="Dfh-L3-E0r" firstAttribute="top" secondItem="Mnp-Zg-IV1" secondAttribute="bottom" constant="8" symbolic="YES" id="Mal-Ss-KJJ"/>
+                            <constraint firstItem="Mnp-Zg-IV1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QJy-nC-GVT"/>
+                            <constraint firstItem="Mnp-Zg-IV1" firstAttribute="centerX" secondItem="Dfh-L3-E0r" secondAttribute="centerX" id="S3v-YZ-CDV"/>
+                            <constraint firstItem="NW4-fm-1nX" firstAttribute="centerX" secondItem="aUj-Ds-5OZ" secondAttribute="centerX" id="Zkf-w1-Dib"/>
+                            <constraint firstItem="Dfh-L3-E0r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="98" id="bpt-fJ-Xu5"/>
+                            <constraint firstItem="2xM-gs-Pzm" firstAttribute="top" secondItem="aUj-Ds-5OZ" secondAttribute="bottom" constant="16" id="gch-s1-qcl"/>
+                            <constraint firstItem="aUj-Ds-5OZ" firstAttribute="leading" secondItem="2xM-gs-Pzm" secondAttribute="leading" id="pxQ-JX-PbE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dfh-L3-E0r" secondAttribute="bottom" constant="8" symbolic="YES" id="pzc-49-Ujf"/>
+                            <constraint firstItem="aUj-Ds-5OZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="qZJ-cI-vKp"/>
+                            <constraint firstItem="aUj-Ds-5OZ" firstAttribute="centerX" secondItem="2xM-gs-Pzm" secondAttribute="centerX" id="sbV-zK-86X"/>
+                            <constraint firstItem="Mnp-Zg-IV1" firstAttribute="top" secondItem="2xM-gs-Pzm" secondAttribute="bottom" constant="22" id="ssO-Pe-OCx"/>
+                            <constraint firstItem="NW4-fm-1nX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wWl-5S-rge"/>
+                            <constraint firstItem="2xM-gs-Pzm" firstAttribute="centerX" secondItem="Mnp-Zg-IV1" secondAttribute="centerX" id="zrV-nb-fYj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="degreeLabel" destination="aUj-Ds-5OZ" id="e6t-1w-AS6"/>
                         <outlet property="destinationLabel" destination="2xM-gs-Pzm" id="D37-OA-Dgz"/>
                         <outlet property="distanceLabel" destination="Mnp-Zg-IV1" id="1r4-D7-JD6"/>
                         <outlet property="pickerView" destination="NW4-fm-1nX" id="Wze-hk-c2u"/>
@@ -76,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="265"/>
+            <point key="canvasLocation" x="274.39999999999998" y="261.31934032983509"/>
         </scene>
     </scenes>
 </document>
