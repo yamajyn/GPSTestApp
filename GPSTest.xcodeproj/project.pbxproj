@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B3284AE11DC1C3D0004FA6DE /* KML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KML.swift; path = ../KML.swift; sourceTree = "<group>"; };
+		B3284AE11DC1C3D0004FA6DE /* KML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KML.swift; sourceTree = "<group>"; };
 		B3284AE51DC1DF48004FA6DE /* KMLTest.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = KMLTest.kml; sourceTree = "<group>"; };
 		B3779B8B1DACF4FC005B8727 /* GPSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3779B8E1DACF4FC005B8727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
