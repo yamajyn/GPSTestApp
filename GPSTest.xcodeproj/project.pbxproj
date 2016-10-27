@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3284AE21DC1C3D0004FA6DE /* KML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3284AE11DC1C3D0004FA6DE /* KML.swift */; };
+		B3284AE61DC1DF48004FA6DE /* KMLTest.kml in Resources */ = {isa = PBXBuildFile; fileRef = B3284AE51DC1DF48004FA6DE /* KMLTest.kml */; };
 		B3779B8F1DACF4FC005B8727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3779B8E1DACF4FC005B8727 /* AppDelegate.swift */; };
 		B3779B911DACF4FC005B8727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3779B901DACF4FC005B8727 /* ViewController.swift */; };
 		B3779B941DACF4FC005B8727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3779B921DACF4FC005B8727 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3284AE11DC1C3D0004FA6DE /* KML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KML.swift; path = ../KML.swift; sourceTree = "<group>"; };
+		B3284AE51DC1DF48004FA6DE /* KMLTest.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = KMLTest.kml; sourceTree = "<group>"; };
 		B3779B8B1DACF4FC005B8727 /* GPSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3779B8E1DACF4FC005B8727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3779B901DACF4FC005B8727 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				B3779B8E1DACF4FC005B8727 /* AppDelegate.swift */,
 				B3779B901DACF4FC005B8727 /* ViewController.swift */,
+				B3284AE11DC1C3D0004FA6DE /* KML.swift */,
+				B3284AE51DC1DF48004FA6DE /* KMLTest.kml */,
 				B3779B921DACF4FC005B8727 /* Main.storyboard */,
 				B3779B951DACF4FC005B8727 /* Assets.xcassets */,
 				B3779B971DACF4FC005B8727 /* LaunchScreen.storyboard */,
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3779B991DACF4FC005B8727 /* LaunchScreen.storyboard in Resources */,
+				B3284AE61DC1DF48004FA6DE /* KMLTest.kml in Resources */,
 				B3779B961DACF4FC005B8727 /* Assets.xcassets in Resources */,
 				B3779B941DACF4FC005B8727 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3779B911DACF4FC005B8727 /* ViewController.swift in Sources */,
+				B3284AE21DC1C3D0004FA6DE /* KML.swift in Sources */,
 				B3779B8F1DACF4FC005B8727 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
