@@ -35,6 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
 
     @IBOutlet weak var compassImageView: UIImageView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         destLoc = CLLocationCoordinate2D(latitude: kml.loData[0].location.latitude, longitude: kml.loData[0].location.longitude)
         
         self.destinationLabel.text = destinations[0] + "まで"
+        
+
         
         // フィールドの初期化
         locationManager = CLLocationManager()
@@ -167,7 +171,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         for data in kml.loData{
             if destinations[row] == data.name{
                 destLoc = CLLocationCoordinate2D(latitude: data.location.latitude, longitude: data.location.longitude)
+                if let url = data.url{
+                    // 画像URL
+                    let myURL:NSURL = NSURL(string: url)!
+                    
+                    // 非同期で読み込む
+                    let req:NSURLRequest = NSURLRequest(URL: myURL)
+                    // 通信開始
+                    NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue(), completionHandler: self.getHttp)
+                }else{
+                    imageView.image = nil
+                }
             }
+            
         }
         /*
         switch destinations[row] {
@@ -196,6 +212,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         locationManager.startUpdatingHeading()
     }
     
+    func getHttp(res:NSURLResponse?, data:NSData?, error:NSError?) {
+        // レスポンスデータをUIImageに変換
+        if let d = data{
+            let img:UIImage = UIImage(data: d)!
+            imageView.image = img
+        }
+        
+    }
 
     @IBAction func update(sender: AnyObject) {
         locationManager.startUpdatingLocation()

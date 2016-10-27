@@ -16,6 +16,7 @@ struct Coordinates{
 struct LocationData{
     var location:Coordinates
     var name:String?
+    var url:String?
 }
 
 class KML{
@@ -35,6 +36,7 @@ class KML{
         placesData.removeAtIndex(0)
         for placeData in placesData {
             var name:String? = nil
+            var url:String? = nil
             let place = placeData.componentsSeparatedByString("</Placemark>")
             
             //name
@@ -43,6 +45,19 @@ class KML{
                 let name2 = name1[1].componentsSeparatedByString("</name>")
                 name = name2[0]
                 print(name2[0])
+            }
+            //画像url
+            
+            if place[0].lowercaseString.containsString("<description>"){
+                let description1 = place[0].componentsSeparatedByString("<description>")
+                let description2 = description1[1].componentsSeparatedByString("</description>")
+                if description2[0].lowercaseString.containsString("img"){
+                    let url1 = place[0].componentsSeparatedByString("<img src=\"")
+                    let url2 = url1[1].componentsSeparatedByString("\"/>")
+                    url = url2[0]
+                    print(url2[0])
+                }
+                
             }
             //座標
             if place[0].lowercaseString.containsString("<coordinates>"){
@@ -53,7 +68,7 @@ class KML{
                 let lat = Double(coordinate[1])!
                 let location:Coordinates = Coordinates(latitude: lat, longitude: long)
                 print(location)
-                loData.append(LocationData(location: location, name: name))
+                loData.append(LocationData(location: location, name: name, url: url))
             }
             
         }
